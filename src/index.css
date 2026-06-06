@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap');
+
+:root {
+  --bg-primary: #080910;
+  --bg-secondary: #10111a;
+  --bg-card: #151722;
+
+  --accent: #7c3aed;
+  --accent-glow: rgba(124, 58, 237, 0.32);
+  --accent-light: #a78bfa;
+  --teal: #2dd4bf;
+
+  --text-primary: #f7f5ff;
+  --text-secondary: #b4b1c8;
+  --text-muted: #76728f;
+
+  --border: #25283a;
+  --border-hover: rgba(167, 139, 250, 0.55);
+
+  --font-main: 'Outfit', sans-serif;
+  --font-code: 'Fira Code', monospace;
+
+  --transition: 0.25s ease;
+  --radius: 12px;
+  --container: 1180px;
+
+  --grid-color: rgba(255, 255, 255, 0.04);
+}
+
+
+[data-theme="light"] {
+  --bg-primary: #f6f7fb;
+  --bg-secondary: #ffffff;
+  --bg-card: #ffffff;
+
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+
+  --border: #e6eaf0;
+  --border-hover: #6366f1;
+
+  --accent: #6366f1;
+  --accent-light: #6366f1;
+
+  --accent-glow: rgba(99, 102, 241, 0.12);
+  --teal: #14b8a6;
+  --grid-color: rgba(15, 23, 42, 0.06);
+}
+
+[data-theme="light"] .project-card,
+[data-theme="light"] .contact-form-wrap,
+[data-theme="light"] .hero-card,
+[data-theme="light"] .exp-card {
+  background: #ffffff;
+  border: 1px solid #e6eaf0;
+  box-shadow: 0 10px 30px rgba(49, 71, 122, 0.645);
+}
+
+/* ====================================
+   GLOBAL SECTION GRID EFFECT
+==================================== */
+
+#about,
+#skills,
+#projects,
+#certificates,
+#contact {
+  position: relative;
+  overflow: hidden;
+}
+
+#about::after,
+#skills::after,
+#projects::after,
+#certificates::after,
+#contact::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    linear-gradient(var(--grid-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+
+  background-size: 50px 50px;
+
+  mask-image:
+    radial-gradient(circle at center,
+      black 30%,
+      transparent 100%);
+
+  -webkit-mask-image:
+    radial-gradient(circle at center,
+      black 30%,
+      transparent 100%);
+
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ====================================
+   KEEP CONTENT ABOVE GRID
+==================================== */
+
+#about>*,
+#skills>*,
+#projects>*,
+#certificates>*,
+#contact>* {
+  position: relative;
+  z-index: 1;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--bg-primary);
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  background: radial-gradient(circle at top left, rgba(124, 58, 237, 0.16), transparent 34rem),
+    radial-gradient(circle at top right, rgba(45, 212, 191, 0.08), transparent 30rem),
+    var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-main);
+  overflow-x: hidden;
+}
+
+button,
+input,
+textarea {
+  font-family: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+section {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 96px 24px;
+  scroll-margin-top: 96px;
+}
+
+#home {
+  max-width: var(--container);
+  min-height: 100vh;
+  padding-top: 120px;
+}
+
+.section-header {
+  margin-bottom: 44px;
+}
+
+.section-tag {
+  color: var(--accent-light);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: lowercase;
+}
+
+.section-title {
+  margin-top: 4px;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.05;
+  color: var(--text-primary);
+}
+
+.section-title span {
+  color: var(--accent-light);
+}
+
+.section-line {
+  width: 72px;
+  height: 3px;
+  margin-top: 16px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent), var(--teal));
+}
+
+@media (max-width: 900px) {
+  section {
+    padding: 80px 18px;
+  }
+
+  #home {
+    padding-top: 110px;
+  }
+}
+
+html {
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+* {
+  transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}

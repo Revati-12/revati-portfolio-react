@@ -1,0 +1,250 @@
+#about {
+    padding-top: 10px;
+}
+
+#about .section-header {
+    margin-bottom: 44px;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.about-text p {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.9;
+    margin-bottom: 1rem;
+}
+
+.about-text strong {
+    color: var(--accent-light);
+    font-weight: 600;
+}
+
+.about-info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin: 1.75rem 0;
+}
+
+.info-chip {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 0.75rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    transition: border-color var(--transition);
+}
+
+.info-chip:hover {
+    border-color: var(--border-hover);
+}
+
+.chip-label {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.chip-val {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.about-links {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.about-link {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color var(--transition);
+}
+
+.about-link:hover {
+    color: var(--accent-light);
+}
+
+/* ── EDUCATION TIMELINE ── */
+.edu-label {
+    font-family: var(--font-code);
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+}
+
+.edu-item {
+    display: flex;
+    gap: 1rem;
+    padding-bottom: 1.75rem;
+    position: relative;
+}
+
+.edu-item::before {
+    content: '';
+    position: absolute;
+    left: 7px;
+    top: 20px;
+    bottom: 0;
+    width: 1px;
+    background: var(--border);
+}
+
+.edu-item:last-of-type::before {
+    display: none;
+}
+
+.edu-dot {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 2px solid var(--bg-primary);
+    flex-shrink: 0;
+    margin-top: 4px;
+    box-shadow: 0 0 10px var(--accent-glow);
+}
+
+.edu-content {
+    flex: 1;
+}
+
+.edu-year {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    font-family: var(--font-code);
+    margin-bottom: 3px;
+}
+
+.edu-degree {
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 2px;
+}
+
+.edu-school {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+}
+
+.edu-badge {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 20px;
+    letter-spacing: 0.04em;
+}
+
+.edu-badge.score {
+    background: rgba(45, 212, 191, 0.1);
+    color: var(--teal);
+    border: 1px solid rgba(45, 212, 191, 0.2);
+}
+
+.edu-badge.in-progress {
+    background: rgba(124, 58, 237, 0.1);
+    color: var(--accent-light);
+    border: 1px solid rgba(124, 58, 237, 0.2);
+}
+
+/* ── EXPERIENCE CARD ── */
+.exp-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+    margin-top: 0.5rem;
+    transition: border-color var(--transition);
+}
+
+.exp-card:hover {
+    border-color: var(--border-hover);
+}
+
+.exp-top {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 1rem;
+}
+
+.exp-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.exp-role {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.exp-company {
+    font-size: 0.78rem;
+    color: var(--accent-light);
+    margin-top: 2px;
+}
+
+.exp-duration {
+    margin-left: auto;
+    font-size: 0.72rem;
+    font-family: var(--font-code);
+    color: var(--text-muted);
+    white-space: nowrap;
+}
+
+.exp-points {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.exp-points li {
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    padding-left: 1rem;
+    position: relative;
+    line-height: 1.6;
+}
+
+.exp-points li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 0.7rem;
+}
+
+/* responsive */
+@media (max-width: 900px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+}
+
+.info-chip {
+    transition: all 0.3s ease;
+}
+
+.info-chip:hover {
+    transform: translateY(-5px);
+}

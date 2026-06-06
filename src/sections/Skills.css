@@ -1,0 +1,105 @@
+/* ── SKILLS ── */
+.skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.skill-bar-group {
+    margin-bottom: 1.5rem;
+}
+
+.skill-bar-top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.skill-name {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+.skill-pct {
+    font-size: 0.78rem;
+    font-family: var(--font-code);
+    color: var(--accent-light);
+}
+
+.skill-track {
+    height: 6px;
+    background: var(--bg-card);
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+}
+
+.skill-fill {
+    height: 100%;
+    border-radius: 10px;
+    background: linear-gradient(to right,
+            var(--accent),
+            var(--teal));
+    transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ── PILL GROUPS ── */
+
+.pill-group {
+    margin-bottom: 1.75rem;
+}
+
+.pill-group-title {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    margin-bottom: 0.75rem;
+}
+
+.pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.pill {
+    font-size: 0.78rem;
+    font-weight: 500;
+    padding: 6px 14px;
+    border-radius: 50px;
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+    background: var(--bg-card);
+    transition: var(--transition);
+    cursor: default;
+}
+
+.pill:hover {
+    border-color: var(--border-hover);
+    color: var(--accent-light);
+}
+
+.pill.teal {
+    border-color: rgba(45, 212, 191, 0.2);
+    color: var(--teal);
+    background: rgba(45, 212, 191, 0.05);
+}
+
+.pill.purple {
+    border-color: rgba(124, 58, 237, 0.25);
+    color: var(--accent-light);
+    background: rgba(124, 58, 237, 0.08);
+}
+
+/* ── RESPONSIVE ── */
+
+@media (max-width: 900px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+}
