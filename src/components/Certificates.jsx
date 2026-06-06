@@ -89,25 +89,18 @@ function Certificates() {
 
             {/* PDF Modal */}
 
-            {
-                selectedPdf && (
+                { selectedPdf && (
                     <div
                         className="pdf-modal"
-                        onClick={() =>
-                            setSelectedPdf(null)
-                        }
+                        onClick={() => setSelectedPdf(null)}
                     >
                         <div
                             className="pdf-container"
-                            onClick={(e) =>
-                                e.stopPropagation()
-                            }
+                            onClick={(e) => e.stopPropagation()}
                         >
                             <button
                                 className="close-btn"
-                                onClick={() =>
-                                    setSelectedPdf(null)
-                                }
+                                onClick={() => setSelectedPdf(null)}
                             >
                                 ✕
                             </button>
@@ -120,14 +113,29 @@ function Certificates() {
                                 Download PDF
                             </a>
 
+                            <a
+                                href={selectedPdf}
+                                target="_blank"
+                                rel="noreferrer"
+                                className="download-btn"
+                                style={{ marginLeft: "10px" }}
+                            >
+                                Open PDF
+                            </a>
+
                             <iframe
                                 src={selectedPdf}
                                 title="Certificate"
+                                width="100%"
+                                height="600px"
+                                style={{
+                                    border: "none",
+                                    marginTop: "20px"
+                                }}
                             />
                         </div>
                     </div>
-                )
-            }
+                )}
         </section >
     );
 }
