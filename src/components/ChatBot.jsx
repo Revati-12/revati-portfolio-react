@@ -209,7 +209,7 @@ function ChatBot() {
                     headers: {
                         "Content-Type": "application/json",
                         "Authorization": "Bearer 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",
-                        "HTTP-Referer": "https://revati-12.github.io",
+                        "HTTP-Referer": "https://inquisitive-malabi-c2cf7b.netlify.app",
                         "X-Title": "Revati Portfolio"
                     },
                     body: JSON.stringify({

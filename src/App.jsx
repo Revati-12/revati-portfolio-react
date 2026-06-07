@@ -2,6 +2,7 @@ import ChatBot from './components/ChatBot';
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import { useState, useEffect } from "react";
+import { initGA, trackPageView } from "./analytics";
 
 import AuroraBackground from "./components/AuroraBackground";
 import Certificates from "./components/Certificates";
@@ -15,6 +16,10 @@ import Contact from "./sections/Contact";
 import "./AuroraBackground.css";
 
 function App() {
+  useEffect(() => {
+    initGA();
+    trackPageView();
+  }, []);
   const [theme, setTheme] = useState("dark");
   const [activeSection, setActiveSection] = useState("home");
 

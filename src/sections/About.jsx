@@ -64,17 +64,19 @@ function About() {
                     <div className="about-links">
 
                         <a
-                            href="mailto:kalerevati27@gmail.com"
+                            href="mailto:kalerevati3@gmail.com"
                             className="about-link"
                         >
-                            ✉️ kalerevati3@gmail.com
+                            <span className="link-icon">✉️</span>
+                            <span className="chip-val">kalerevati3@gmail.com</span>
                         </a>
 
                         <a
                             href="tel:+918208509306"
                             className="about-link"
                         >
-                            📞 +91 8208509306
+                            <span className="link-icon">📞</span>
+                            <span className="chip-val">+91 8208509306</span>
                         </a>
 
                     </div>
