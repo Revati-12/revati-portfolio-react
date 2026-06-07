@@ -209,7 +209,7 @@ function ChatBot() {
                     headers: {
                         "Content-Type": "application/json",
                         "Authorization": `Bearer ${import.meta.env.VITE_OPENROUTER_KEY}`,
-                        "HTTP-Referer": "https://inquisitive-malabi-c2cf7b.netlify.app",
+                        "HTTP-Referer": "https://revati-kale-portfolio.netlify.app",
                         "X-Title": "Revati Portfolio"
                     },
                     body: JSON.stringify({
